@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Libras | ConectaSinal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/libras.css">
+</head>
+
+
+<body>
+
+
+    <!-- ========================================== -->
+    <!-- CABEÇALHO -->
+    <!-- ========================================== -->
+
+    <header>
+
+        <div class="logo">
+            🤟 ConectaSinal
+        </div>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="comunicacao.html">Comunicação</a>
+            <a href="libras.html" class="pagina-atual">Libras</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="emergencia.html">Emergência</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================== -->
+    <!-- CONTEÚDO -->
+    <!-- ========================================== -->
+
+    <main class="comunicacao-container">
+
+
+        <!-- TÍTULO -->
+
+        <section class="titulo-comunicacao">
+
+            <span class="tag">
+                🤟 APRENDA LIBRAS
+            </span>
+
+            <h1>
+                Sinais <span>do dia a dia.</span>
+            </h1>
+
+            <p>
+                Assista aos vídeos, pratique e marque os sinais
+                que você já aprendeu. Comece pelos cumprimentos
+                e avance no seu ritmo.
+            </p>
+
+        </section>
+
+
+        <!-- PROGRESSO -->
+
+        <section class="libras-progresso">
+
+            <div class="progresso-topo">
+                <strong id="progressoTexto">0 de 0 sinais aprendidos</strong>
+
+                <button id="btnZerar" class="btn-zerar" type="button">
+                    Zerar progresso
+                </button>
+            </div>
+
+            <div
+                id="progressoBarra"
+                class="progresso-barra"
+                role="progressbar"
+                aria-label="Progresso de aprendizado"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+                <div id="progressoPreenchido" class="progresso-preenchido"></div>
+            </div>
+
+        </section>
+
+
+        <!-- BUSCA -->
+
+        <section class="libras-busca">
+            <input
+                type="search"
+                id="busca"
+                placeholder="Buscar sinal (ex.: água, mãe, obrigado)"
+                aria-label="Buscar sinal"
+                autocomplete="off"
+            >
+        </section>
+
+
+        <!-- CATEGORIAS E SINAIS (gerados pelo JavaScript) -->
+
+        <div class="categorias" id="categorias"></div>
+
+        <div class="frases-grid" id="listaSinais"></div>
+
+        <p id="semResultado" class="sem-resultado oculto">
+            Nenhum sinal encontrado. Tente outra palavra.
+        </p>
+
+
+        <!-- NOTA -->
+
+        <p class="libras-nota">
+            Assim como o português, a Libras tem variações regionais.
+            Sempre que possível, confirme os sinais com uma pessoa
+            surda ou com um intérprete da sua região.
+        </p>
+
+
+    </main>
+
+
+    <!-- ========================================== -->
+    <!-- JANELA DO SINAL -->
+    <!-- ========================================== -->
+
+    <div
+        id="librasTela"
+        class="libras-tela oculto"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="fraseLibras"
+    >
+
+        <div class="libras-box">
+
+            <button
+                id="btnFecharSinal"
+                class="fechar"
+                type="button"
+                aria-label="Fechar"
+            >
+                ✕
+            </button>
+
+            <div id="sinalIcone" class="libras-icone"></div>
+
+            <p class="libras-label">SINAL EM LIBRAS</p>
+
+            <h2 id="fraseLibras"></h2>
+
+            <div class="video-container">
+
+                <video
+                    id="sinalVideo"
+                    controls
+                    loop
+                    muted
+                    playsinline
+                ></video>
+
+                <div id="videoAusente" class="video-ausente oculto">
+                    <span>🎬</span>
+                    <p>O vídeo deste sinal estará disponível em breve.</p>
+                </div>
+
+            </div>
+
+            <p class="video-info">
+                Assista algumas vezes e tente repetir o sinal.
+            </p>
+
+            <div class="libras-navegacao">
+                <button id="btnAnterior" class="btn-navegar" type="button">
+                    ← Anterior
+                </button>
+
+                <button id="btnProximo" class="btn-navegar" type="button">
+                    Próximo →
+                </button>
+            </div>
+
+            <div class="libras-acoes">
+                <button id="btnAprendido" class="btn-aprendido" type="button">
+                    Marcar como aprendido
+                </button>
+
+                <button id="btnVoltarSinal" class="btn-fechar" type="button">
+                    Voltar
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/libras.js"></script>
+
+
+</body>
+
+</html>

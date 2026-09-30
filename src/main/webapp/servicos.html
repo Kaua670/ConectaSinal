@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Serviços | ConectaSinal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/servicos.css">
+</head>
+
+
+<body>
+
+
+    <!-- ========================================== -->
+    <!-- CABEÇALHO -->
+    <!-- ========================================== -->
+
+    <header>
+
+        <div class="logo">
+            🤟 ConectaSinal
+        </div>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="comunicacao.html">Comunicação</a>
+            <a href="libras.html">Libras</a>
+            <a href="servicos.html" class="pagina-atual">Serviços</a>
+            <a href="emergencia.html">Emergência</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ========================================== -->
+    <!-- CONTEÚDO -->
+    <!-- ========================================== -->
+
+    <main class="comunicacao-container">
+
+
+        <!-- TÍTULO -->
+
+        <section class="titulo-comunicacao">
+
+            <span class="tag">
+                🛎️ SERVIÇOS
+            </span>
+
+            <h1>
+                Comunique-se <span>em qualquer lugar.</span>
+            </h1>
+
+            <p>
+                Escolha onde você está, toque na frase e mostre a tela
+                para quem está atendendo. A mensagem aparece em letras
+                grandes e pode ser falada em voz alta.
+            </p>
+
+        </section>
+
+
+        <!-- ESCOLHA DO SERVIÇO -->
+
+        <section class="escolha-modo">
+
+            <h2>Onde você está?</h2>
+
+            <div class="servicos-grid" id="listaServicos"></div>
+
+        </section>
+
+
+        <!-- FRASES DO SERVIÇO ESCOLHIDO -->
+
+        <section class="comunicador" id="frasesSecao">
+
+            <div class="comunicador-header">
+                <span id="servicoIcone"></span>
+                <h2 id="servicoTitulo"></h2>
+                <p id="servicoDescricao"></p>
+            </div>
+
+            <p id="servicoDica" class="servico-dica oculto"></p>
+
+            <label class="servico-voz" id="vozRotulo">
+                <input type="checkbox" id="falarAlto" checked>
+                🔊 Falar a mensagem em voz alta
+            </label>
+
+            <div class="frases-grid" id="listaFrases"></div>
+
+        </section>
+
+
+        <!-- LUGARES PERTO DE VOCÊ (localização do aparelho) -->
+
+        <section class="comunicador proximos oculto" id="proximosSecao">
+
+            <div class="comunicador-header">
+                <span>📍</span>
+                <h2 id="proximosTitulo">Perto de você</h2>
+                <p>Lugares cadastrados no mapa, do mais próximo ao mais distante.</p>
+            </div>
+
+            <div class="local-atual">
+
+                <p id="localAtual">Sua localização ainda não foi encontrada.</p>
+
+                <div class="lugar-acoes">
+                    <button id="btnAtualizarLocal" class="btn-lugar" type="button">
+                        Atualizar localização
+                    </button>
+
+                    <button id="btnMostrarLocal" class="btn-lugar oculto" type="button">
+                        Mostrar meu endereço
+                    </button>
+                </div>
+
+            </div>
+
+            <p id="proximosStatus" class="proximos-status" role="status" aria-live="polite"></p>
+
+            <div id="listaProximos" class="lista-proximos"></div>
+
+            <a
+                id="linkGoogleMaps"
+                class="btn-lugar oculto"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Ver mais no Google Maps
+            </a>
+
+            <p class="proximos-nota">
+                Os dados vêm do OpenStreetMap, um mapa colaborativo: endereços,
+                telefones e até alguns lugares podem estar incompletos ou
+                desatualizados, então confirme antes de sair. A sua localização
+                é enviada a serviços públicos de mapas apenas para buscar os
+                lugares próximos, e o ConectaSinal não a guarda.
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ========================================== -->
+    <!-- JANELA DA MENSAGEM -->
+    <!-- ========================================== -->
+
+    <div
+        id="mensagemTela"
+        class="mensagem-tela oculto"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mensagemExibida"
+    >
+
+        <div class="mensagem-box">
+
+            <button
+                id="btnFecharMensagem"
+                class="fechar"
+                type="button"
+                aria-label="Fechar"
+            >
+                ✕
+            </button>
+
+            <div id="mensagemIcone" class="mensagem-icone"></div>
+
+            <p id="mensagemServico" class="mensagem-label"></p>
+
+            <h2 id="mensagemExibida"></h2>
+
+            <div class="mensagem-acoes">
+
+                <button id="btnOuvir" class="btn-ouvir" type="button">
+                    🔊 Ouvir novamente
+                </button>
+
+                <button id="btnVoltarMensagem" class="btn-fechar" type="button">
+                    Voltar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/servicos.js"></script>
+
+
+</body>
+
+</html>
