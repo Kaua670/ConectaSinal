@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Comunicação | ConectaSinal</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <div class="logo">
+            🤟 ConectaSinal
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="comunicacao.html" class="pagina-atual">
+                Comunicação
+            </a>
+
+            <a href="libras.html">
+                Libras
+            </a>
+
+            <a href="servicos.html">
+                Serviços
+            </a>
+
+            <a href="emergencia.html">
+                Emergência
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main class="comunicacao-container">
+
+
+        <!-- TÍTULO -->
+
+        <section class="titulo-comunicacao">
+
+            <span class="tag">
+                🤟 CENTRAL DE COMUNICAÇÃO
+            </span>
+
+            <h1>
+                Comunicação
+                <span>sem barreiras.</span>
+            </h1>
+
+            <p>
+                Facilite a comunicação entre pessoas
+                surdas e ouvintes através de texto
+                e Libras.
+            </p>
+
+        </section>
+
+
+        <!-- ESCOLHA DO TIPO DE COMUNICAÇÃO -->
+
+        <section class="escolha-modo">
+
+            <h2>
+                Como você deseja se comunicar?
+            </h2>
+
+
+            <div class="modo-botoes">
+
+
+                <!-- SURDO PARA OUVINTE -->
+
+                <button
+                    class="modo-btn ativo"
+                    onclick="selecionarModo('surdo')">
+
+                    <span class="modo-icone">
+                        🧏
+                    </span>
+
+                    <strong>
+                        Surdo → Ouvinte
+                    </strong>
+
+                    <small>
+                        Digite uma mensagem
+                    </small>
+
+                </button>
+
+
+                <!-- OUVINTE PARA SURDO -->
+
+                <button
+                    class="modo-btn"
+                    onclick="selecionarModo('libras')">
+
+                    <span class="modo-icone">
+                        👤🤟
+                    </span>
+
+                    <strong>
+                        Ouvinte → Surdo
+                    </strong>
+
+                    <small>
+                        Comunique-se através de Libras
+                    </small>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- SURDO → OUVINTE -->
+        <!-- ================================= -->
+
+        <section
+            id="modo-surdo"
+            class="comunicador">
+
+            <div class="comunicador-header">
+
+                <span>
+                    🧏
+                </span>
+
+                <h2>
+                    Pessoa surda → Pessoa ouvinte
+                </h2>
+
+                <p>
+                    Digite uma mensagem para mostrar
+                    à pessoa com quem você está se comunicando.
+                </p>
+
+            </div>
+
+
+            <label for="mensagemSurdo">
+
+                Sua mensagem
+
+            </label>
+
+
+            <textarea
+                id="mensagemSurdo"
+                maxlength="300"
+                placeholder="Digite aqui sua mensagem...">
+            </textarea>
+
+
+            <div class="contador">
+
+                <span id="contadorSurdo">
+                    0
+                </span>
+
+                / 300 caracteres
+
+            </div>
+
+
+            <button
+                class="btn-comunicar"
+                onclick="mostrarMensagemSurdo()">
+
+                👁️ Mostrar mensagem
+
+            </button>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- OUVINTE → SURDO -->
+        <!-- ================================= -->
+
+        <section
+            id="modo-libras"
+            class="comunicador oculto">
+
+
+            <div class="comunicador-header">
+
+                <span>
+                    👤🤟
+                </span>
+
+                <h2>
+                    Pessoa ouvinte → Pessoa surda
+                </h2>
+
+                <p>
+                    Escolha uma frase para visualizar
+                    sua representação em Libras.
+                </p>
+
+            </div>
+
+
+            <!-- CATEGORIAS -->
+
+            <div class="categorias">
+
+                <button
+                    class="categoria ativa"
+                    onclick="filtrarCategoria('todos')">
+
+                    Todas
+
+                </button>
+
+                <button
+                    class="categoria"
+                    onclick="filtrarCategoria('cotidiano')">
+
+                    🏠 Cotidiano
+
+                </button>
+
+                <button
+                    class="categoria"
+                    onclick="filtrarCategoria('escola')">
+
+                    🏫 Escola
+
+                </button>
+
+                <button
+                    class="categoria"
+                    onclick="filtrarCategoria('saude')">
+
+                    🏥 Saúde
+
+                </button>
+
+                <button
+                    class="categoria"
+                    onclick="filtrarCategoria('emergencia')">
+
+                    🆘 Emergência
+
+                </button>
+
+            </div>
+
+
+            <!-- FRASES -->
+
+            <div class="frases-grid">
+
+
+                <!-- OLÁ -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="cotidiano"
+                    onclick="mostrarLibras(
+                        'Olá',
+                        'videos/libras/ola.mp4'
+                    )">
+
+                    <span>
+                        👋
+                    </span>
+
+                    <strong>
+                        Olá
+                    </strong>
+
+                    <small>
+                        Saudação
+                    </small>
+
+                </button>
+
+
+                <!-- OBRIGADO -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="cotidiano"
+                    onclick="mostrarLibras(
+                        'Obrigado',
+                        'videos/libras/obrigado.mp4'
+                    )">
+
+                    <span>
+                        🙏
+                    </span>
+
+                    <strong>
+                        Obrigado
+                    </strong>
+
+                    <small>
+                        Agradecimento
+                    </small>
+
+                </button>
+
+
+                <!-- COMO ESTÁ -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="cotidiano"
+                    onclick="mostrarLibras(
+                        'Como você está?',
+                        'videos/libras/como-esta.mp4'
+                    )">
+
+                    <span>
+                        ❓
+                    </span>
+
+                    <strong>
+                        Como você está?
+                    </strong>
+
+                    <small>
+                        Conversa
+                    </small>
+
+                </button>
+
+
+                <!-- AJUDA -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="emergencia"
+                    onclick="mostrarLibras(
+                        'Preciso de ajuda',
+                        'videos/libras/ajuda.mp4'
+                    )">
+
+                    <span>
+                        🆘
+                    </span>
+
+                    <strong>
+                        Preciso de ajuda
+                    </strong>
+
+                    <small>
+                        Solicitação
+                    </small>
+
+                </button>
+
+
+                <!-- MÉDICO -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="saude"
+                    onclick="mostrarLibras(
+                        'Preciso de um médico',
+                        'videos/libras/medico.mp4'
+                    )">
+
+                    <span>
+                        🏥
+                    </span>
+
+                    <strong>
+                        Preciso de um médico
+                    </strong>
+
+                    <small>
+                        Saúde
+                    </small>
+
+                </button>
+
+
+                <!-- BANHEIRO -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="cotidiano"
+                    onclick="mostrarLibras(
+                        'Onde fica o banheiro?',
+                        'videos/libras/banheiro.mp4'
+                    )">
+
+                    <span>
+                        🚻
+                    </span>
+
+                    <strong>
+                        Onde fica o banheiro?
+                    </strong>
+
+                    <small>
+                        Localização
+                    </small>
+
+                </button>
+
+
+                <!-- ONDE FICA -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="cotidiano"
+                    onclick="mostrarLibras(
+                        'Onde fica a recepção?',
+                        'videos/libras/onde-fica.mp4'
+                    )">
+
+                    <span>
+                        📍
+                    </span>
+
+                    <strong>
+                        Onde fica a recepção?
+                    </strong>
+
+                    <small>
+                        Localização
+                    </small>
+
+                </button>
+
+
+                <!-- ESCOLA -->
+
+                <button
+                    class="frase-card"
+                    data-categoria="escola"
+                    onclick="mostrarLibras(
+                        'Onde fica a sala?',
+                        'videos/libras/sala.mp4'
+                    )">
+
+                    <span>
+                        🏫
+                    </span>
+
+                    <strong>
+                        Onde fica a sala?
+                    </strong>
+
+                    <small>
+                        Escola
+                    </small>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- JANELA DE LIBRAS -->
+    <!-- ================================= -->
+
+    <div
+        id="librasTela"
+        class="libras-tela oculto">
+
+
+        <div class="libras-box">
+
+
+            <button
+                class="fechar"
+                onclick="fecharLibras()">
+
+                ✕
+
+            </button>
+
+
+            <span class="libras-icone">
+                🤟
+            </span>
+
+
+            <p class="libras-label">
+                COMUNICAÇÃO EM LIBRAS
+            </p>
+
+
+            <h2 id="fraseLibras">
+                Olá
+            </h2>
+
+
+            <!-- VÍDEO -->
+
+            <div class="video-container">
+
+                <video
+                    id="videoLibras"
+                    controls
+                    playsinline>
+
+                    <source
+                        id="videoFonte"
+                        src=""
+                        type="video/mp4">
+
+                    Seu navegador não suporta vídeos.
+
+                </video>
+
+            </div>
+
+
+            <p class="video-info">
+
+                ▶ Observe o sinal em Libras
+
+            </p>
+
+
+            <button
+                class="btn-fechar"
+                onclick="fecharLibras()">
+
+                ← Voltar
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================= -->
+    <!-- JANELA DA MENSAGEM -->
+    <!-- ================================= -->
+
+    <div
+        id="mensagemTela"
+        class="mensagem-tela oculto">
+
+
+        <div class="mensagem-box">
+
+
+            <button
+                class="fechar"
+                onclick="fecharMensagem()">
+
+                ✕
+
+            </button>
+
+
+            <span class="mensagem-icone">
+                🤟
+            </span>
+
+
+            <p class="mensagem-label">
+                MENSAGEM
+            </p>
+
+
+            <h2 id="mensagemExibida">
+            </h2>
+
+
+            <button
+                class="btn-fechar"
+                onclick="fecharMensagem()">
+
+                ← Voltar
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="js/comunicacao.js"></script>
+
+</body>
+
+</html>
